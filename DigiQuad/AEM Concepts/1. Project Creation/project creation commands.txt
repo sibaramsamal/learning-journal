@@ -1,0 +1,12 @@
+mvn -B org.apache.maven.plugins:maven-archetype-plugin:3.2.1:generate \
+-DarchetypeGroupId=com.adobe.aem \
+-DarchetypeArtifactId=aem-project-archetype \
+-DarchetypeVersion=41 \
+-DappTitle="First Project" \
+-DappId="Sample-Project-Sibaram" \
+-DgroupId="com.sibaram" \
+-DaemVersion="6.5.13" \
+-DincludeDispatcherConfig="y" \
+-Dlanguage="en" \
+-Dcountry="us" \
+-DsingleCountry="n"

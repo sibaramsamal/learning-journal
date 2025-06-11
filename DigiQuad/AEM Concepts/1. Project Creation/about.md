@@ -67,7 +67,13 @@ These indicate the setup has been completed successfully.
     mvn clean install -PautoInstallPackage
     ```
 
-    - After successful installation, your project will appear in the AEM Author environment.
+    or if you want to run through intellijIdea, then
+
+<p align="center">
+  <img width="791" alt="Image" src="https://github.com/user-attachments/assets/659d558d-992d-491c-9fee-56870c187b49" alt="Intellij edit config window" width="300"/>
+</p>
+
+- After successful installation, your project will appear in the AEM Author environment.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/a5ef650b-545d-4cc9-a80f-d9bda8009270" alt="AEM Author Instance View" width="300"/>

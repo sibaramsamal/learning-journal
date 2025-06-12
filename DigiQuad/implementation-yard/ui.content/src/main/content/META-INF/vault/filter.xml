@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/implementation-yard" mode="merge"/>
+    <filter root="/content/implementation-yard" mode="merge"/>
+    <filter root="/content/dam/implementation-yard" mode="merge">
+        <exclude pattern="/content/dam/implementation-yard(/.*)?"/>
+        <include pattern="/content/dam/implementation-yard/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/implementation-yard/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/implementation-yard" mode="merge"/>
+</workspaceFilter>

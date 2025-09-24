@@ -11,7 +11,7 @@
   `mvn clean`
 
 - Build project:  
-  `mvn clean install`
+  `mvn clean install` - to clean all the modules and delete target folders.
 
 - Build & deploy to AEM:  
   `mvn clean install -PautoInstallPackage`

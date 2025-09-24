@@ -1,0 +1,200 @@
+28/05
+1. When ever we are asked to create a component, we have to check whether any core component having the desired fields or not. After that if we want some extra fields, then we have to add top of it. Not a whole new component.
+
+2. If we want to add some validations to our dialog, the cleaner approach is go to dialog field then add granite class. In this way that class will be added to that particular field. Then write a JS code or JQuery to target that class.
+-------------------
+Pending things here: Try explore more clearly
+
+3. Sling models:
+    - Why this is used, even if we can get the properties directly using properties.<field name>
+    - What is the complex task you have implemented till now in this sling models
+
+29/05
+1. What is CMS?
+2. Any other CMS tools in the market? Dhrupal etc.
+3. Gartner report will tell you why we are using AEM
+4. Why AEM? Workflows feature, headless CMS feature (only deals with content, presentation will be done by Angular or react etc), redirect commons moreover good community support etc.
+5. Why JS codes are written below the html file? Because browser randers code line by line, so when JS tries to target some element which may not load at that time, it may show error.
+
+6. Why clientlibs are used? What was the bad way in traditional concept so AEM adopted it. 
+7. What is the use of Client libraries? What is the benefits?
+8. How can you call one client library to another client library? - Using embed property
+9. What is the use of dependencies in clientlibs?
+10. What is the use of allowproxy?
+
+03/06
+1. How AEM author things are replicating in Publisher mode? (Replication Agent)
+2. How ot handle 100K users at publisher mode? (Multiple publishers)
+(web content 
+management mode or wcmmode)
+    Author mode ---> Publisher <----> Apache Server/Dispatcher ----> CDN 
+       | ----------> Publisher <---------------> |                           |
+       | ----------> Publisher <---------------> |                           |       End Users
+
+Here how AEM handles the load balancing is, Dispatcher itself self sufficient and internally it is handling the requests and decide to redirect to which Publisher instance after authenticating at dispatcher level. So no need to worry about this setup. AEM will handle everything in AEM as a Clowd. (Explore more about it)
+    
+-------------------
+Architecture of AEM
+-------------------
+1. AEM (Application Layer)
+2. Apache Sling (Web Application Framework) : When ever we are requesting some asset or page or exfragment or anything are handled by it
+3. Apache Jack Rabit Oak (JCR / Storage Layer) : What ever in AEM stored, are stored in node formats of type JCR only. 
+4. Apache Felix (OSGI Java Container) : All the bundle, configurations, servlets etc are managed and stored here.
+5. /oak:ndex - In crx/de in this location, so many prebuild indexes are there to effectively manage and access the required nodes. When ever we are using querries, these indexes are utilized by AEM internally. This is called OAK Indexing.
+
+----------------
+Sling Resolution
+----------------
+- How the Page is loaded means rendered when a request came? (From the URL it takes the requested node, go to that node in crx/de, opens jcr:content, all the nodes will be there of all the components which are being used in the page, these components are again one one html files., now it will check their sling:resourceTypes of each node, again go to that type which are again present in some node location, and finally it finds the html file and include in the final output. Similar way it renders all the html files to give a final included html file. So one by one the nodes are accessed and rendered here)
+
+Task: Write a Sling model to get the selector/query params/suffixes into the sling model
+
+Sling Servlet related task: Post request
+
+04/06
+-----------
+Sling model
+-----------
+1. Adaptables: Which context the model will be means from page or slinghttprequest etc.
+2. PostConstruct
+3. @Via, @Inject, etc model related annotations defination and usage
+4. ResourceResolver
+5. Page properties (Task related to getting all child pages and display by authoring only parent page)
+    - You should able to give the laymen steps
+    - Also is there any other way to achieve it or not?
+    - @ extension
+    - sightly expression or rules or things to remember while using
+    - adaptTo
+    - ResourceResolver
+
+
+05/06
+---------------
+Sling Servlets
+---------------
+1. Howmany types of servlet registration? When to use what?
+    - Path based
+    - Service Based
+2. methods in servlet
+3. All attributes which are being used explain.
+
+Task: 1. Create the servlet using Resource Type.
+2. Pass a page path to the resource.
+3. Go to that page path in the Jcr.
+4. Add additional property called updatedProperty = 'updated from postman'
+5. Handle all possible error handling like proper errorcode, request type, null pointer exception
+
+06/06
+----------
+sightly
+----------
+1. data-sly-repeat vs. data-sly-list
+2. data-sly-template? What is the scenario without using this?
+
+task: - Create Banner component
+      - Create teaser component
+    - Create Button.html using data-sly-template
+    - Pass the different values (title, description, cssclass)Ito the button.html based on banner component
+    - Pass the different values to the button.html based on teaser component
+
+09/06
+
+--------------
+Sling Services
+--------------
+
+1. Services are used to achieve modularity. Means multiple places we can call them.
+2. We can check for the all registered services from the below URL.
+http://localhost:4502/system/console/bundles - components (http://localhost:4502/system/console/components)
+3. If you want to check why my service is not working correctly, we have to search the service in our project bundle and it must be active. In case it is pending or something, our service won't work.
+
+Task:
+Create a component DetailComponent.
+Have a input field in the HTMl and when I add some data into the input field and click on submit, it should fetch the details of the given ID.
+Create an Interface called JsonAPIDetails with method "fetchjsonDetailsbyId"
+Implement the methods of JsonAPIDetails interrface.
+In this method fetchjsonDetailsbyId --> Call the API(Use Standard java ) and fetch the details and return the Json object to the servlet
+Display it in the HTML
+ 
+https://jsonplaceholder.typicode.com/  - API Details URL
+
+10/06
+------------------
+Schedulers
+10K - for each page there is a owner -- (pageOwner) and there is expiry date (expiryDate) -- Loop through those 10K pages
+and send the email to the content owner before 30 days
+of expiry. This email frequency will be on Ist day of every month.
+
+reference: redquark.org
+Idially it will run automatically through run() but in real time we have to trigger it through osgi configuration
+like: 
+public void run() {
+    if (enabled) {
+        codes to be executed;
+        // this enabled will be fetched from osgi configuration
+    }
+}
+
+Q. What are the run modes in AEM?
+    - Primary run mode author, public
+    - Secondary dev, qa, stage, prod
+
+Q. How to create OSGI configuration in AEM?
+    - @ObjectClassDefination [OCD]
+    - For accessing the properties we will use @AttributeDefinition
+
+create a osgi configuration with property called apiUrl and call that osgi config from your service Impl
+
+create a osgi configuration with property called apiUrl and call that osgi config from your service Impl
+ 
+Create a schedular that runs for every 1 hour and get the list of children pages (pass any page path by hardcoding it in the code ) titles. Create a OSGI configuration and define enable,
+
+chron job in the osgi config.
+
+11/06/2025
+AEM Workflows;
+--------------
+
+Q. What is workflow?
+    - We want to publish one page, so someone has to verify and approve it. Second level approver again needs to do the same. In AEM to achieve this (to automate or to achieve step by step procedured to taken place we use this concept)
+
+Form code level we can do it or through launcher
+
+Create a workflow "Asset publish workflow".
+
+1. Initate the request.
+2. Take the payload.
+3. Assign to some one (create one user for this ).
+4. Login with that user (the one you created at step 3).
+5. you will see the notification in the notification panel.
+6. Approve that request.
+7. Upon success request - activate the page.
+8. If rejected - just end the flow
+ 
+Q. What is service user? Why we use that?
+Suppose we have to give our API to any third party company to access our data. In that case we can't give them our admin password. Like they will call our servlet through postman. In that case we will create one service user with username and password. In realtime we are not using ResourceResolver to access the datas, because in that case we are directly giving permission to access the data.
+
+localhost:4502/crx/explorer -> system user ->
+localhost:4502/systemuser
+
+
+16/06/2025
+Workflow Practical
+
+17/06/2025
+Workflow continues
+Querybuilder
+
+Q. Different Types of Queries in AEM are XPAth, SQL2 [SQL to Query], SQL
+SQL2 we can edit and generate under crd/de console but XPath we have to open localhost:4502/libs/cq/search/content/"querydebug.html" console which is again a out of the box console provided by AEM.
+Q. Difference between XPATH and SQL2
+
+
+25/06/2025
+Migration steps and rules
+Q. Programetically create pages (use xml or json)
+
+MSM (Multi site manager)
+
+28
+Log maintainance

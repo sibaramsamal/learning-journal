@@ -1,0 +1,6 @@
+/Users/sibaramsamal/Documents/References/aembuilder/generated-projects/pitneybowes/ui.content/src/main/content/jcr_root/conf/pitneybowes/settings/wcm/templates/general-page/structure/.content.xml
+
+/Users/sibaramsamal/Documents/References/aembuilder/generated-projects/pitneybowes/ui.content/src/main/content/jcr_root/conf/pitneybowes/settings/wcm/templates/smart-access/structure/.content.xml
+
+After creating experience fragment, 
+

@@ -59,3 +59,46 @@ Once installed, open **pgAdmin** from the **Applications** folder or via Spotlig
 - **Password**: The password you set for the `postgres` user
 
 Click **Save** and you should be able to connect to your PostgreSQL server via **pgAdmin**. This guide provides a clear set of steps for installing PostgreSQL, creating users, troubleshooting issues, and accessing your databases through pgAdmin.
+
+
+# Database Backup Guide (With Create & Insert Scripts)
+
+This guide explains how to take a database backup that includes both **CREATE** and **INSERT** statements.
+
+## Steps
+
+### **Step 1:**  
+Select the database, and from the options, choose **Backup**.
+
+### **Step 2:**  
+In the backup type, choose **Plain**.
+
+### **Step 3:**  
+Fill in the backup file name and set the file type to **.sql**.
+
+### **Step 4:**  
+In the **Data** options (2nd column), check the **Data** radio button.
+
+### **Step 5:**  
+In the 3rd column, under **Query Options**, enable:  
+- **Include CREATE DATABASE statement**  
+- **Use INSERT commands**
+
+### **Step 6:**  
+In the last column, choose all the tables, including those from the **public** schema.
+
+---
+
+## Screenshots
+
+![Screenshot 1](https://github.com/user-attachments/assets/98b94896-e53d-4a44-8831-b24348515957)
+
+![Screenshot 2](https://github.com/user-attachments/assets/4d11a20e-62ea-41a6-bdbc-e36b16c320b7)
+
+![Screenshot 3](https://github.com/user-attachments/assets/77b8256d-23a2-40ae-ad23-e0d398d7eb72)
+
+![Screenshot 4](https://github.com/user-attachments/assets/ceb09f37-a5bf-4cfd-ad3b-7f460ae39e1b)
+
+![Screenshot 5](https://github.com/user-attachments/assets/ac049649-4907-4e19-adcd-b6aa8f141a35)
+
+---

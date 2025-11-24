@@ -88,17 +88,26 @@ In the 3rd column, under **Query Options**, enable:
 In the last column, choose all the tables, including those from the **public** schema.
 
 ---
-
 ## Screenshots
 
-![Screenshot 1](https://github.com/user-attachments/assets/98b94896-e53d-4a44-8831-b24348515957)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/98b94896-e53d-4a44-8831-b24348515957" width="450" alt="Screenshot 1" />
+</p>
 
-![Screenshot 2](https://github.com/user-attachments/assets/4d11a20e-62ea-41a6-bdbc-e36b16c320b7)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4d11a20e-62ea-41a6-bdbc-e36b16c320b7" width="450" alt="Screenshot 2" />
+</p>
 
-![Screenshot 3](https://github.com/user-attachments/assets/77b8256d-23a2-40ae-ad23-e0d398d7eb72)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/77b8256d-23a2-40ae-ad23-e0d398d7eb72" width="450" alt="Screenshot 3" />
+</p>
 
-![Screenshot 4](https://github.com/user-attachments/assets/ceb09f37-a5bf-4cfd-ad3b-7f460ae39e1b)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ceb09f37-a5bf-4cfd-ad3b-7f460ae39e1b" width="450" alt="Screenshot 4" />
+</p>
 
-![Screenshot 5](https://github.com/user-attachments/assets/ac049649-4907-4e19-adcd-b6aa8f141a35)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ac049649-4907-4e19-adcd-b6aa8f141a35" width="450" alt="Screenshot 5" />
+</p>
 
 ---

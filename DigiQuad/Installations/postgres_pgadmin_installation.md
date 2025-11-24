@@ -77,7 +77,7 @@ In the backup type, choose **Plain**.
 Fill in the backup file name and set the file type to **.sql**.
 
 ### **Step 4:**  
-In the **Data** options (2nd column), check the **Data** radio button.
+In the **Data** options (2nd column), check the **Data** radio button, **pre-data** and **post-data** all must checked.
 
 ### **Step 5:**  
 In the 3rd column, under **Query Options**, enable:  

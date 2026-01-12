@@ -108,6 +108,12 @@ PostgreSQL responded successfully, confirming the issue was resolved.
 
 ---
 
+After that restart the DB. If multiple DBs are present, stop and restart one by one. PG admin will use one of them which is having proper files.
+
+```
+brew services start postgresql@14
+```
+
 ## Final Conclusion
 
 * ❌ Not an application issue
